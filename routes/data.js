@@ -3,7 +3,7 @@ const Axios = require('axios')
 const router = express.Router()
 const config = {
   headers: {
-    AccountKey: process.env.API_ACCOUNT_KEY,
+    AccountKey: process.env.ACCOUNT_KEY_API,
     accept: 'application/json',
   },
 }
