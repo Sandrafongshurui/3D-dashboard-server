@@ -15,7 +15,10 @@ router.get('/bus', async (req, res, next) => {
       'http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2?BusStopCode=19029',
       config,
     )
-    const data = response.data.Services[0].NextBus
+    let data = response.data.Services
+    data = data.map(item =>{
+     return [item.ServiceNo, item.NextBus]
+    })
     console.log(data)
     return res.status("200").json(data)
   } catch (error) {
